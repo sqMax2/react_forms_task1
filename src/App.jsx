@@ -1,4 +1,6 @@
+import { useRef, useState } from "react";
 import "./App.css";
+import { TextInput } from "./components/TextInput/TextInput";
 
 function App() {
   const formRef = useRef(null);
@@ -24,12 +26,19 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
-          <form
+          <form className="dark-theme"
             ref={formRef}
             onChange={handleChange}
             onSubmit={handleSubmit}
             onReset={handleReset}
           >
+            <TextInput label="Smallest" size="xs" placeholder="Placeholder" withAsterisk/>
+            <TextInput size="sm" label="Small" description="This is a description" radius="rmd"/>
+            <TextInput size="md" label="Medium" radius="rxl" variant="unstylled" icon="@"/>
+            <TextInput size="lg" label="Large" description="This is a description" variant="filled"/>
+            <TextInput size="xl" label="Largest" radius="rmd" error="This is an error"/>
+
+
             <button type="submit">Submit</button>
           </form>
         </div>

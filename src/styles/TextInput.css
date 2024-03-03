@@ -1,0 +1,131 @@
+body {
+	--color: black;
+	--inverse-color: white;
+	--dim-color: gray;
+	--fill-color: rgb(202, 202, 202);
+	--inverse-fill-color: rgb(121, 121, 121);
+	--bg-color: white;
+  	--inverse-bg-color: #282c34;
+	--field-color: white;
+	--inverse-field-color: #353942;
+	--focus-color: DodgerBlue;
+}
+
+.dark-theme {
+	--color: var(--inverse-color);
+	--fill-color: var(--inverse-fill-color);
+	--bg-color: var(--inverse-bg-color);
+	--field-color: var(--inverse-field-color);
+}
+
+.text-input {
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	height:fit-content;
+	box-sizing: border-box;
+	text-align: left;
+	font-size: 1rem;
+	color: var(--color);
+	background-color: var(--bg-color);
+
+	--rxs: 2px;
+	--rsm: 4px;
+	--rmd: 8px;
+	--rlg: 15px;
+	--rxl: 20px;
+
+}
+
+
+
+.text-input.xs {
+	font-size: 0.3em;
+}
+
+.text-input.sm {
+	font-size: 0.4em;
+}
+
+.text-input.md {
+	font-size: 0.5em;
+}
+
+.text-input.lg {
+	font-size: 0.7em;
+}
+
+.text-input.xl {
+	font-size: 1em;
+}
+
+.text-input input {
+	margin: 0px;
+	padding: 0px;
+	/* display: block; */
+	font-size: 0.8em;
+	background-color: inherit;
+	color: var(--color);
+
+	display: inline-block;
+}
+
+.text-input input,
+.text-input input:focus {
+	outline: none;
+	border: none;
+	box-shadow: none;
+}
+
+.text-input label[data-withasterisk]::after {
+	content: " *";
+  	color: red;
+}
+
+.text-input > p {
+	font-size: 0.6em;
+	margin: 0px;
+	color: gray;
+	
+}
+
+.input-wrapper {
+	width: fit-content;
+	border: 1px solid var(--dim-color);
+	background-color: var(--bg-color);
+	--radius: var(--rmd);
+	padding-left: calc(var(--rxl) / 2);
+	padding-right: calc(var(--rxl) / 2);
+	border-radius: var(--radius);
+}
+
+.input-wrapper.filled {
+	background-color: var(--fill-color);
+	border-color: var(--fill-color);
+}
+
+.input-wrapper:focus-within {
+	border-color: var(--focus-color);
+}
+
+.input-wrapper.unstylled{
+	background-color: transparent;
+	border: none;
+	padding: 0px;
+}
+
+
+.input-wrapper > span::before {
+	content: attr(data-icon) " ";
+	color: var(--dim-color);
+	/* padding-left: var(--rxs); */
+	
+}
+
+
+.input-wrapper[data-error] + span::after {
+	content: attr(data-error) " !";
+	border-color: red;
+	color: red;
+}
+
