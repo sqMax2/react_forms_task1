@@ -15,6 +15,7 @@ import "../../styles/TextInput.css";
  * size: "xs" | "sm" | "md" | "lg" | "xl" - The size of the input.
  * isEmail: boolean - Whether the input is an email input.
  * ref: React.RefObject<HTMLInputElement> - The reference to the input element.
+ * isPassword: boolean - Whether the input is a password input.
  * rest: any - The rest of the HTML input element props.
  * @return {JSX.Element} The rendered text input component.
  */
@@ -33,6 +34,7 @@ export function TextInput(props) {
     size,
     isEmail,
     ref,
+    isPassword,
     ...rest
   } = props;
 
@@ -61,7 +63,7 @@ export function TextInput(props) {
         {icon?<span data-icon={icon} />:""}
         <input
           ref={inputRef}
-          type={isEmail ? "email" : "text"}
+          type={isEmail ? "email" : isPassword ? "password" : "text"}
           id={id}
           {...rest}
         />
