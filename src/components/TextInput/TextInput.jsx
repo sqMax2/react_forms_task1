@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef } from "react";
 import "../../styles/TextInput.css";
 
+
 export function TextInput(props) {
   const id = useId();
   const blockRef = useRef(null);
@@ -38,7 +39,8 @@ export function TextInput(props) {
       <div
         className={`input-wrapper ${variant ? variant : ""}`}
         style={radius ? { "--radius": `var(--${radius})` } : {}}
-		{...(error ? {'data-error': error} : {})}
+        {...(error ? { "error": "true" } : {})}
+		
       >
         {icon?<span data-icon={icon} />:""}
         <input
@@ -48,7 +50,7 @@ export function TextInput(props) {
           {...rest}
         />
       </div>
-	  <span></span>
+	  <p>{error}</p>
 	  
     </div>
   );

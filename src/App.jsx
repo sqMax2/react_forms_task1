@@ -33,10 +33,10 @@ function App() {
             onReset={handleReset}
           >
             <TextInput label="Smallest" size="xs" placeholder="Placeholder" withAsterisk/>
-            <TextInput size="sm" label="Small" description="This is a description" radius="rmd"/>
+            <TextInput size="sm" label="Small" description="This is a description" radius="rmd" error="This is an error"/>
             <TextInput size="md" label="Medium" radius="rxl" variant="unstylled" icon="@"/>
-            <TextInput size="lg" label="Large" description="This is a description" variant="filled"/>
-            <TextInput size="xl" label="Largest" radius="rmd" error="This is an error"/>
+            <TextInput size="lg" label="Large" description="This is a description" variant="filled" isEmail/>
+            <TextInput size="xl" label="Largest" radius="rmd" />
 
 
             <button type="submit">Submit</button>

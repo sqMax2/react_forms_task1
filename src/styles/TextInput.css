@@ -9,6 +9,7 @@ body {
 	--field-color: white;
 	--inverse-field-color: #353942;
 	--focus-color: DodgerBlue;
+	--error-color: firebrick;
 }
 
 .dark-theme {
@@ -118,14 +119,28 @@ body {
 .input-wrapper > span::before {
 	content: attr(data-icon) " ";
 	color: var(--dim-color);
-	/* padding-left: var(--rxs); */
+
 	
 }
 
 
-.input-wrapper[data-error] + span::after {
-	content: attr(data-error) " !";
-	border-color: red;
-	color: red;
+.input-wrapper + p {
+	height: 0.7em;
+	font-size: 0.7em;
+
+	line-height: 1em;
+	color: var(--error-color);
 }
+
+.input-wrapper[error],
+.input-wrapper:has(input:invalid) {
+	border-color: var(--error-color);
+}
+
+.input-wrapper[error] input,
+.input-wrapper input:invalid {
+	color: var(--error-color);
+}
+
+
 
