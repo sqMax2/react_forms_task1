@@ -10,6 +10,7 @@ body {
 	--inverse-field-color: #353942;
 	--focus-color: DodgerBlue;
 	--error-color: firebrick;
+	--base-font-size: 2rem;
 }
 
 .dark-theme {
@@ -26,7 +27,6 @@ body {
 	height:fit-content;
 	box-sizing: border-box;
 	text-align: left;
-	font-size: 1rem;
 	color: var(--color);
 	background-color: var(--bg-color);
 
@@ -38,26 +38,28 @@ body {
 
 }
 
-
+/* *:has(>.text-input) {
+	font-size: 2rem;
+} */
 
 .text-input.xs {
-	font-size: 0.3em;
+	font-size: calc(var(--base-font-size) * 0.3);
 }
 
 .text-input.sm {
-	font-size: 0.4em;
+	font-size: calc(var(--base-font-size) * 0.4);
 }
 
 .text-input.md {
-	font-size: 0.5em;
+	font-size: calc(var(--base-font-size) * 0.5);
 }
 
 .text-input.lg {
-	font-size: 0.7em;
+	font-size: calc(var(--base-font-size) * 0.7);
 }
 
 .text-input.xl {
-	font-size: 1em;
+	font-size: var(--base-font-size);
 }
 
 .text-input input {
