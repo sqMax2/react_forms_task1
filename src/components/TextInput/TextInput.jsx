@@ -18,6 +18,7 @@ import "../../styles/TextInput.css";
  * isPassword: boolean - Whether the input is a password input.
  * rest: any - The rest of the HTML input element props.
  * @return {JSX.Element} The rendered text input component.
+ * Theme: if parent element contains .dark-theme class, dark theme will be applied
  */
 export function TextInput(props) {
   const id = useId();
@@ -45,7 +46,7 @@ export function TextInput(props) {
   return (
     <div
       ref={blockRef}
-      className={`text-input ${size ? size : ""} `}
+      className={`text-input ${size ? size : "md"} `}
       onClick={() => inputRef.current.focus()}
     >
       {label ? (
@@ -56,7 +57,7 @@ export function TextInput(props) {
       {description ? <p>{description}</p> : null}
       <div
         className={`input-wrapper ${variant ? variant : ""}`}
-        style={radius ? { "--radius": `var(--${radius})` } : {}}
+        style={radius ? { "--radius": `var(--${radius})` } : {"--radius": 'var(--rmd)'} }
         {...(error ? { "error": "true" } : {})}
 		
       >
