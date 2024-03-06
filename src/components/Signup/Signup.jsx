@@ -1,5 +1,6 @@
 import { TextInput } from "../TextInput/TextInput";
 import { useState } from "react";
+import "../../styles/form.css";
 
 export function Signup(props) {
   const [signupData, setSignupData] = useState({});
