@@ -35,7 +35,19 @@ function App() {
         </div>
         <div>
           <Signup className="dark-theme" onSubmit={handleSignupSubmit} />
-          <div></div>
+          <div>
+            {Object.keys(signupData).length !== 0 ? (
+              <>
+                {Object.entries(signupData).map(([key, val], i) => (
+                  <p key={key}>
+                    {key}: {val}
+                  </p>
+                ))}
+              </>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
       </header>
     </div>
