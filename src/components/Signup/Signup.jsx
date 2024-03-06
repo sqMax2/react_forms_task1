@@ -30,7 +30,7 @@ export function Signup(props) {
   return (
     <form onSubmit={handleSubmit} onChange={handleChange} {...rest}>
       <TextInput name="name" label="Name" />
-      <TextInput name="nickname" label="Nickname" />
+      <TextInput name="nickname" label="Nickname" icon="@"/>
       <TextInput name="email" isEmail label="Email" />
       <fieldset>
         <legend>Gender:</legend>
