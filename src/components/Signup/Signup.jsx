@@ -29,9 +29,9 @@ export function Signup(props) {
 
   return (
     <form onSubmit={handleSubmit} onChange={handleChange} {...rest}>
-      <TextInput name="name" label="Name" />
-      <TextInput name="nickname" label="Nickname" icon="@"/>
-      <TextInput name="email" isEmail label="Email" />
+      <TextInput name="name" label="Name" placeholder="Enter your name"/>
+      <TextInput name="nickname" label="Nickname" placeholder="Enter your nickname" icon="@"/>
+      <TextInput name="email" isEmail label="Email" placeholder="Enter your email"/>
       <fieldset>
         <legend>Gender:</legend>
         <div>
@@ -57,8 +57,8 @@ export function Signup(props) {
           <label htmlFor="gender-female">female</label>
         </div>
       </fieldset>
-      <TextInput name="password" isPassword label="Password" />
-      <TextInput name="repeatPassword" isPassword label="Repeat Password" />
+      <TextInput name="password" isPassword label="Password" placeholder="Enter your password"/>
+      <TextInput name="repeatPassword" isPassword label="Repeat Password" placeholder="Repeat your password"/>
       <button type="submit">Submit</button>
     </form>
   );

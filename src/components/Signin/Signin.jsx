@@ -24,8 +24,18 @@ export function Signin(props) {
 
   return (
     <form onSubmit={handleSubmit} onChange={handleChange} {...rest}>
-      <TextInput name="email" label="Email" isEmail />
-      <TextInput name="password" label="Password" isPassword />
+      <TextInput
+        name="email"
+        label="Email"
+        placeholder="Enter your email"
+        isEmail
+      />
+      <TextInput
+        name="password"
+        label="Password"
+        placeholder="Enter your password"
+        isPassword
+      />
       <button type="submit">Submit</button>
     </form>
   );
